@@ -7,7 +7,7 @@
     <p class="card-text">{{product.description}}</p>
   </div>
   <div class="card-footer text-muted" >
-    Valid Till - {{product.validTill}}
+    Valid Till - {{product.validTill | date: format}}
   </div>
   <div class="card-footer">
   <a class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidNowClick(product._id)">Bid Now</a>

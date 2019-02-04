@@ -38,8 +38,8 @@ export class ProductServiceService {
   }
 
   // bid now 
-  onBidNowFormSubmit(bidderInfo){
-    const url = '/products/bidnow';
+  onBidNowFormSubmit(bidderInfo,id){
+    const url = `/products/bidnow/${id}`;
     const headers = new HttpHeaders();
     headers.append('Content-Type','application/json');
     return this.http.post<ResponseFromApi>(url,bidderInfo,{headers: headers});

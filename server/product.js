@@ -49,13 +49,16 @@ router.get('/:id',(req,res)=>{
 
 // for bid now submit /products/bidnow
 
-router.post('/bidnow',(req,res)=>{
-  Bidder.bidderEmail = req.body.bidderEmail;
-  Bidder.bidderName = req.body.bidderName;
-  Bidder.bidProductId = req.body.bidProductId;
-  const price = req.body.bidPrice;
-  Bidder.bidPriceArray.push(price); // error
-  Bidder.save()
+router.post('/bidnow/:id',(req,res)=>{
+  const bidderInfo = {
+    bidderEmail : req.body.bidderEmail,
+    bidderName :req.body.bidderName,
+    bidProductId: req.params.id
+    // const price = req.body.bidPrice;
+  }
+  
+  // Bidder.bidPriceArray.push(price); // error
+  new Bidder(bidderInfo).save()
     .then((bidder)=>{
       res.status(200).json({success: true ,msg:'Bidder info saved !!',bidder: bidder});
     })

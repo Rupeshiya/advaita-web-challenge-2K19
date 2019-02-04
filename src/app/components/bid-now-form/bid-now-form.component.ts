@@ -37,7 +37,8 @@ bidProductId: any;
       bidPrice: this.bidPrice,
       bidProductId: this.bidProductId
     };
-    this.productService.onBidNowFormSubmit(bidderInfo).subscribe((res)=>{
+   
+    this.productService.onBidNowFormSubmit(bidderInfo,this.bidProductId).subscribe((res)=>{
       if(res.success){
         console.log('bidder info saved !!');
         this.flashMessage.show('Successfully bidded !!',{cssClass: 'alert-success', timeout:2000});

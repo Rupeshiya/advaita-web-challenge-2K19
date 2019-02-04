@@ -36,5 +36,7 @@ products: any;
     this.router.navigate([`/bidnow/${id}`]);
   }
 
+  // timer 
+  
   
 }
