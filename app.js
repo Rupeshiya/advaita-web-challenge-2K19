@@ -61,6 +61,9 @@ app.get('/test',(req,res)=>{
 // users routes
 const users = require('./server/users');
 app.use('/users',users);
+const products = require('./server/product');
+app.use('/products',products);
+
 
 // for all other routes
 app.get('**',(req,res)=>{

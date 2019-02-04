@@ -24,6 +24,15 @@
       <li class="nav-item">
         <a class="nav-link" *ngIf="authService.loggedIn()" [routerLink]="['/dashboard']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
       </li>
+      <li class="nav-item dropdown">
+          <a *ngIf="authService.loggedIn()" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Options
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="authService.loggedIn()">
+            <a class="dropdown-item" *ngIf="authService.loggedIn()" [routerLink]="['allProducts']">All Products</a>
+            <a class="dropdown-item" *ngIf="authService.loggedIn()" [routerLink]="['addProduct']">Add Product</a>
+          </div>
+        </li>
     </ul>
   </div>
 </nav>

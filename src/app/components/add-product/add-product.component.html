@@ -1,0 +1,43 @@
+<div>
+  <h2 class="page-header">Add Product</h2>
+  <form>
+    <div class="form-group">
+      <label for="ProductName">Product Name</label>
+      <input type="text" [(ngModel)]="productName" name="productName" class="form-control"  id="name" placeholder="Enter product name">
+    </div>
+    <div class="form-group">
+      <label for="Description">Description</label>
+      <textarea type="text" [(ngModel)]="description" name="description" class="form-control" id="description" row="3" placeholder="Enter description of product">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="basePrice">Base Price</label>
+            <textarea type="number" [(ngModel)]="basePrice" name="basePrice" class="form-control" id="time" placeholder="Enter Base Price (in $)">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="time">Valid Till</label>
+            <input type="number" [(ngModel)]="time" name="time" class="form-control" id="time" placeholder="Enter time in hours">
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit" (click)="onAddProductSubmit()">
+  </form>
+  </div>
+  <!-- <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Add Product</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product Name" [(ngModel)]="productName" name="productName" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="description" name="description" placeholder="Description goes here" required></textarea>
+      </div>
+      <div class="form-group">
+          <label for="exampleFormControlInput1">Base Price</label>
+          <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Base Price" [(ngModel)]="basePrice" name="basePrice" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Valid Till</label>
+            <input type="number" [(ngModel)]="time" name="time" class="form-control" id="time" placeholder="Enter time in hours">
+        </div>
+      <button type="submit" class="btn btn-primary" (click)="onAddProductSubmit()">Add Product</button>
+  </form> -->

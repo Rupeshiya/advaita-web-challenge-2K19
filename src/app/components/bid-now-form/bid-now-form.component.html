@@ -1,0 +1,16 @@
+<h2 class="page-header" >Bid Now</h2>
+<form >
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="bidderName" name="bidderName">
+      </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" placeholder="Enter your email" [(ngModel)]="email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="bidPrice">Bid Price</label>
+      <input type="text" class="form-control" placeholder=" Enter Price" [(ngModel)]="bidPrice" name="bidPrice">
+    </div>
+    <input class="btn btn-lg btn-primary" type="submit" value="Done" (click)="onDoneClick()">
+</form>

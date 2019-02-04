@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError, map } from 'rxjs/operators';
 import { responseFromApi, users } from '../interface';
 import { tokenNotExpired } from 'angular2-jwt';
+import { ResponseFromApi } from '../response';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,7 @@ export class AuthService {
     const headers = new HttpHeaders();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get(url, {headers: headers});
+    return this.http.get<ResponseFromApi>(url, {headers: headers});
   }
 
   // function to get user from local storage

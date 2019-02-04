@@ -6,24 +6,22 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AllProductsComponent } from './components/all-products/all-products.component';
+import { BidNowFormComponent } from './components/bid-now-form/bid-now-form.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 
 const routes: Routes = [
-  {
-    path: '', component: HomeComponent
-  },
-  {
-    path: 'register', component: RegisterComponent
-  },
-  {
-    path: 'login', component: LoginComponent
-  },
-  {
-    path: 'profile', component: ProfileComponent , canActivate: [AuthGuard]
-  },
-  {
-    path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]
-  }
+
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard] },
+  { path: 'allProducts', component: AllProductsComponent },
+  { path: 'bidnow/:id', component: BidNowFormComponent },
+  { path: 'addProduct', component: AddProductComponent },
+  { path: '', component: HomeComponent }
+  
 ];
 
 @NgModule({

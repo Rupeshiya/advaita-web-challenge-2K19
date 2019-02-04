@@ -73,7 +73,7 @@ router.post('/authenticate',(req,res)=>{
 router.get('/profile',(req,res)=>{
     // res.send('profile works!!');
     console.log('user info-',req.user);
-    res.status(200).json({user: req.user});
+    res.status(200).json({success: true,msg:'user data retrieved',user: req.user});
 });
 
 // /users/validate route
