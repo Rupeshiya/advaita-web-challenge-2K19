@@ -1,0 +1,17 @@
+#allProduct{
+  display: flex;
+  box-align: center;
+  box-sizing: border-box;
+  flex-align: center; 
+  box-shadow: 1px 1px grey ;
+  width: 70%;
+  height: 100%;
+  padding: 20px;
+  margin-left:20%;
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+#allProduct:hover{
+  box-shadow: 1px 2px grey ;
+  transition: ease-in 0.7s;
+}

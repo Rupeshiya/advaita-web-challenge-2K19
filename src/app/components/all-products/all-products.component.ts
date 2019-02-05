@@ -3,6 +3,7 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth-service.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-all-products',
@@ -14,6 +15,10 @@ products: any;
 validty: any;
 bidWinner: any;
 productId : any;
+userdata: any;
+userEmail: any;
+rightTODelete: any;
+productIdToDelete: any = [];
 
   constructor(
     private productService: ProductServiceService,
@@ -23,8 +28,10 @@ productId : any;
   ) { }
 
   ngOnInit() {
+    
     this.getAllProducts();
     this.flashMessage.show('Note:- Bid less than latest bid is not acceptable .',{cssClass: 'alert-danger', timout: 3000});
+    this.getProductOwner();
   }
 
   // load all the products
@@ -80,12 +87,40 @@ productId : any;
       if(res.success){
         console.log('response-',res);
         this.bidWinner = res.bidWinPerson;
-        this.flashMessage.show(`Congratulations !! ,This product goes to ${this.bidWinner}`,{cssClass: 'alert-success', timeout: 8000});
+        this.flashMessage.show(`Congratulations !! ,Till now product goes to ${this.bidWinner}`,{cssClass: 'alert-success', timeout: 8000});
       } else {
         this.flashMessage.show('OOps!! , Something went wrong !!',{cssClass: 'alert-danger', timeout: 2000});
       }
     });
+  }  
+
+  getProductOwner(){
+    this.userdata = this.authService.getUsersLocalStorage();
+    console.log('userdata ',this.userdata);
+    this.userEmail = this.userdata.email;
+    console.log('useremail-',this.userEmail);
+    // console.log('useremail json-', JSON.parse(this.userEmail));
+    this.getRightTODelete();
   }
-  
-  
+
+   getRightTODelete() {
+    this.productService.getAllProducts().subscribe((res)=>{
+      if(res.success){
+        res.products.forEach(product => {
+          if(product.productOwnerEmail === this.userEmail){
+            this.rightTODelete = true;
+            this.productIdToDelete.push(product._id); 
+            console.log('this.right',this.rightTODelete);
+            console.log('productIdToDelete-', this.productIdToDelete);
+            // return this.rightTODelete ;
+          } else {
+            this.rightTODelete = false;
+            console.log('this.right',this.rightTODelete);
+            // return this.rightTODelete ;
+          }
+        });
+      }
+    });
+  }
+
 }

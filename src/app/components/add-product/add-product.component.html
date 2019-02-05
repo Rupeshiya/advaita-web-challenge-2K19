@@ -1,6 +1,15 @@
 <h2 class="page-header">Add Product</h2>
   <form>
     <div class="form-group">
+        <label for="ProductOwnerEmail">Product Owner email</label>
+        <input type="email" #productOwnerEmailText="ngModel" [(ngModel)]                  ="productOwnerEmail" name="productOwnerEmail" class="form-control"  id="name" placeholder="Enter product owner email" required>
+        <ul class="list-unstyled" *ngIf="productOwnerEmailText?.invalid && (productOwnerEmailText?.touched || productOwnerEmailText?.dirty)">
+            <li class="text-danger" *ngIf="productOwnerEmailText.errors?.required"> 
+               Product Owner name is required !!
+            </li>
+        </ul>
+    </div>
+    <div class="form-group">
       <label for="ProductName">Product Name</label>
       <input type="text" #productNameText="ngModel" [(ngModel)]="productName" name="productName" class="form-control"  id="name" placeholder="Enter product name" required>
       <ul class="list-unstyled" *ngIf="productNameText?.invalid && (productNameText?.touched || productNameText?.dirty) ">
@@ -38,7 +47,7 @@
               </ul>
         </div>
     </div>
-    <button class="btn btn-primary" href="/products/upload">Upload Image</button>
+    <!-- <button class="btn btn-primary" href="/products/upload">Upload Image</button> -->
     <input type="submit" class="btn btn-primary" value="Submit" (click)="onAddProductSubmit()">
   </form>
   <!-- <form>

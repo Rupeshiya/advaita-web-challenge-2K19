@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require('../models/product');
 const Products = require('../models/product');
 const async = require('async');
+const { ensureAuthenticated } = require('../helpers/auth');
 
 // to add product /products/add
 router.post('/add',(req,res)=>{
@@ -11,7 +12,8 @@ router.post('/add',(req,res)=>{
     productName: req.body.productName,
     productDescription: req.body.description,
     basePrice: req.body.basePrice,
-    validTill: Date.now() + (req.body.validTill * 3600000) 
+    validTill: Date.now() + (req.body.validTill * 3600000),
+    productOwnerEmail: req.body.productOwnerEmail
   };
   new Products(newProduct)
     .save()

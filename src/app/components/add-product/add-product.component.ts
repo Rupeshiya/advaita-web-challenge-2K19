@@ -3,6 +3,7 @@ import { ProductServiceService } from '../../services/product-service.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -13,14 +14,17 @@ productName: any;
 description: any;
 time: any;
 basePrice: any;
+productOwnerEmail: any;
 
   constructor(
     private productService: ProductServiceService,
     private router: Router,
     private flashMessage: FlashMessagesService
+    
   ) { }
 
   ngOnInit() {
+  
   }
 
   // method to make call to add product
@@ -30,7 +34,8 @@ basePrice: any;
       productName: this.productName,
       description: this.description,
       basePrice: this.basePrice,
-      validTill: this.time
+      validTill: this.time,
+      productOwnerEmail: this.productOwnerEmail
     };
     this.productService.addProduct(productInfo).subscribe((res)=>{
       if(res.success){
@@ -43,26 +48,4 @@ basePrice: any;
       }
     });
   }
-  // timer
-  // An asynchronous timer  
- startCountDown(hours){
-  var hours = hours;
-  var minutes = hours%60;
-
-  var counter = hours%60
-	var interval = setInterval(() => {
-		console.log(counter);
-		counter--;
-		if (counter < 0 ) {
-			
-			// code here will run when the counter reaches zero.
-			
-			clearInterval(interval);
-			console.log('Ding!');
-		}	
-	}, 1000);
-}
-
-  
-
 }

@@ -4,6 +4,7 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const { sendMail ,mailOPtions } = require('../server/mail');
+const { ensureAuthenticated } = require('../helpers/auth');
 
 // loading model
 require('../models/user');
@@ -21,6 +22,10 @@ router.post('/register',(req,res)=>{
 
     User.addUser(newUser,(err,user)=>{
         if(err){
+            mailOPtions.to = user.email;
+            mailOPtions.subject = 'Successfully registered !!';
+            mailOPtions.text = `Hi ${user.username}\n\n` + 'Welcome to the world of auction !!\n' + 'Happy auction !!';
+            sendMail();
             console.log('error in users.js',err);
             res.status(500).json({success:false, msg: 'unable to register'});
         } else {

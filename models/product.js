@@ -27,6 +27,9 @@ const productSchema = new Schema({
   bidPrice:{
     type:  Number,
     default: 0
+  },
+  productOwnerEmail:{
+    type: String
   }
 });
 
