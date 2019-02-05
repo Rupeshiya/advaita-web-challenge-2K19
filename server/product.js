@@ -6,6 +6,8 @@ const Products = require('../models/product');
 const async = require('async');
 const { ensureAuthenticated } = require('../helpers/auth');
 
+// ================================== ADD PRODUCT ============================= //
+// ============================================================================ //
 // to add product /products/add
 router.post('/add',(req,res)=>{
   const newProduct = {
@@ -27,6 +29,9 @@ router.post('/add',(req,res)=>{
     });
 });
 
+// ======================================= GET PRODUCTS ========================== //
+// =============================================================================== //
+
 // to get all the products /products
 router.get('/',(req,res)=>{
   Products.find({}).lean()
@@ -39,6 +44,9 @@ router.get('/',(req,res)=>{
     });
 });
 
+// ============================== GET PRODUCT BY ID =============================== //
+// ================================================================================ //
+
 // to get one product at a time /products/:id 
 router.get('/:id',(req,res)=>{
   Products.findById(req.params.id)
@@ -50,6 +58,8 @@ router.get('/:id',(req,res)=>{
     });
 });
 
+// =================================== DELETE PRODUCT ============================= //
+// ================================================================================ //
 //deleting the product
 router.delete('/:id',(req,res)=>{
   Products.findByIdAndDelete(req.params.id)
@@ -62,8 +72,10 @@ router.delete('/:id',(req,res)=>{
     });
 });
 
-// for bid now submit /products/bidnow
+// =================================== FOR BIDDING ================================= //
+// ================================================================================= //
 
+// for bid now submit /products/bidnow
 router.post('/bidnow/:id',(req,res)=>{
   const bidPrice = req.body.bidPrice;
   Products.findByIdAndUpdate(req.params.id)
@@ -93,6 +105,9 @@ router.post('/bidnow/:id',(req,res)=>{
   })
 });
 
+// ================================== BID RESULT ================================== //
+// ================================================================================ //
+
 // bid result
 router.get('/bidresult/:id',(req,res)=>{
   Products.findById(req.params.id)
@@ -106,6 +121,8 @@ router.get('/bidresult/:id',(req,res)=>{
     });
 });
 
+// ================================== VALIDITY =================================== //
+// =============================================================================== //
 
 router.get('/validity/:id',(req,res)=>{
   const id = req.params.id;
@@ -138,8 +155,6 @@ router.get('/validity/:id',(req,res)=>{
     }
   ]); 
 });
-
-
 
 
 module.exports = router;

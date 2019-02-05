@@ -68,6 +68,7 @@ productIdToDelete: any = [];
     this.checkValidity(id);
     this.checkBidResult(id);
   }
+  
   // validity
   checkValidity(id){
     this.productService.checkValidity(id).subscribe((res)=>{
@@ -112,11 +113,9 @@ productIdToDelete: any = [];
             this.productIdToDelete.push(product._id); 
             console.log('this.right',this.rightTODelete);
             console.log('productIdToDelete-', this.productIdToDelete);
-            // return this.rightTODelete ;
           } else {
             this.rightTODelete = false;
             console.log('this.right',this.rightTODelete);
-            // return this.rightTODelete ;
           }
         });
       }

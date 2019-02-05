@@ -19,6 +19,9 @@ import { AllProductsComponent } from './components/all-products/all-products.com
 import { BidNowFormComponent } from './components/bid-now-form/bid-now-form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+
 
 @NgModule({
   declarations: [
@@ -39,8 +42,9 @@ import { CountdownTimerModule } from 'ngx-countdown-timer';
     FormsModule,
     HttpClientModule,
     CountdownTimerModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     FlashMessagesModule.forRoot(),
-    
   ],
   providers: [AuthGuard,AuthService,ValidateService,HttpClientModule],
   bootstrap: [AppComponent]
