@@ -7,7 +7,8 @@
     "build": "ng build --prod && node ./app.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "eslint": "eslint ./models/**/**.js ./server/**/**.js ./config/**/**.js ./app.js --fix"
   },
   "private": true,
   "dependencies": {
