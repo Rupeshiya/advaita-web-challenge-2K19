@@ -69,6 +69,7 @@ router.post('/bidnow/:id',(req,res)=>{
       const productName = product.productName;
       const basePrice = product.basePrice;
       console.log('bidder product is-',product);
+      // logic to store max cost from bidder
       if(bidPrice > product.bidPrice){
         product.bidderEmail = req.body.bidderEmail,
         product.bidderName = req.body.bidderName,
