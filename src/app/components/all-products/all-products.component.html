@@ -1,5 +1,6 @@
+<h2 class="page-header text-center">Products</h2>
 <div class="card-header text-center">
-    Products
+    
   </div>
 <div class="card text-center" *ngFor="let product of products">
   <div class="card-body" >
@@ -7,10 +8,11 @@
     <p class="card-text">{{product.productDescription}}</p>
   </div>
   <div class="card-footer text-muted" >
-    Base Price ${{product.basePrice}}
+    Base Price ${{product.basePrice}} <br>
+    Latest Bid ${{product.bidPrice}}
   </div>
   <div class="card-footer">
-  <a class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidNowClick(product._id)">Bid Now</a>
+  <button class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidNowClick(product._id)">Bid Now</button>
   <button class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidResultClick(product._id)">Bid Result</button>
   <button class="btn btn-danger" (click)="onDeleteProductClick(product._id)">Delete</button>
   </div> 
