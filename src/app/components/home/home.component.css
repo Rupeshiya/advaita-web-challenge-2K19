@@ -24,3 +24,9 @@ body ,html {
     margin-left: -512px;   /* 50% */
   }
 }
+#welcome{
+  margin-top: 10%;
+  color: #ecf0eb;
+  font-size: 50px;
+  font-weight: bold;
+}
