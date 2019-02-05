@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+const { sendMail ,mailOPtions } = require('../server/mail');
 
 // loading model
 require('../models/user');
@@ -22,9 +23,9 @@ router.post('/register',(req,res)=>{
         if(err){
             console.log('error in users.js',err);
             res.status(500).json({success:false, msg: 'unable to register'});
-        } 
-        res.status(200).json({success: true, msg: 'User registered'});
-    
+        } else {
+            res.status(200).json({success: true, msg: 'User registered'});
+        }
     });
 });
 

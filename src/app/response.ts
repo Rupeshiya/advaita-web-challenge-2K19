@@ -3,5 +3,9 @@ export interface ResponseFromApi {
   err?: any,
   product?: any,
   products?: any,
-  user?: any
+  user?: any,
+  validity?: Boolean,
+  validTill?: any,
+  bidWinPerson?: any,
+  msg?: any
 }

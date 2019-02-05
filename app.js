@@ -67,7 +67,7 @@ app.use('/products',products);
 
 // for all other routes
 app.get('**',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./dist/mean/index.html'));
+    res.sendFile(path.join(__dirname,'./dist/web-challenge/index.html'));
 });
 
 app.listen(port,()=>{

@@ -33,9 +33,10 @@ password: string;
           this.authService.storeUserData(data.token, data.user);
           console.log('user token-', data.token);
           console.log('user info-', data.user);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/allProducts']);
       } else {
         this.flashMessage.show(data.msg, {cssClass: 'alert-info', timeout: 3000});
+        window.location.reload();
         this.router.navigate(['/login']);
       }
     });

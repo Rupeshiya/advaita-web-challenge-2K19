@@ -4,13 +4,15 @@
 <div class="card text-center" *ngFor="let product of products">
   <div class="card-body" >
     <h5 class="card-title">{{product.productName}}</h5>
-    <p class="card-text">{{product.description}}</p>
+    <p class="card-text">{{product.productDescription}}</p>
   </div>
   <div class="card-footer text-muted" >
-    Valid Till - {{product.validTill | date: format}}
+    Base Price ${{product.basePrice}}
   </div>
   <div class="card-footer">
   <a class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidNowClick(product._id)">Bid Now</a>
+  <button class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidResultClick(product._id)">Bid Result</button>
+  <button class="btn btn-danger" (click)="onDeleteProductClick(product._id)">Delete</button>
   </div> 
 </div>
 

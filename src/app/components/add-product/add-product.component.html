@@ -1,27 +1,46 @@
-<div>
-  <h2 class="page-header">Add Product</h2>
+<h2 class="page-header">Add Product</h2>
   <form>
     <div class="form-group">
       <label for="ProductName">Product Name</label>
-      <input type="text" [(ngModel)]="productName" name="productName" class="form-control"  id="name" placeholder="Enter product name">
+      <input type="text" #productNameText="ngModel" [(ngModel)]="productName" name="productName" class="form-control"  id="name" placeholder="Enter product name" required>
+      <ul class="list-unstyled" *ngIf="productNameText?.invalid && (productNameText?.touched || productNameText?.dirty) ">
+        <li class="text-danger" *ngIf="productNameText.errors?.required"> 
+            Product name is required !!
+        </li>
+      </ul>
     </div>
     <div class="form-group">
-      <label for="Description">Description</label>
-      <textarea type="text" [(ngModel)]="description" name="description" class="form-control" id="description" row="3" placeholder="Enter description of product">
+    <label for="Description">Description</label>
+    <textarea type="text" #descriptionText="ngModel" [(ngModel)]="description" name="description" class="form-control" id="description" row="3" placeholder="Enter description of product" required >
+    <ul class="list-unstyled" *ngIf="descriptionText?.invalid && (descriptionText?.touched || descriptionText?.dirty) ">
+        <li class="text-danger" *ngIf="descriptionText.errors?.required"> 
+            Description is required !!
+        </li>
+      </ul>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="basePrice">Base Price</label>
-            <textarea type="number" [(ngModel)]="basePrice" name="basePrice" class="form-control" id="time" placeholder="Enter Base Price (in $)">
+            <textarea type="number" #basePriceText="ngModel" [(ngModel)]="basePrice" name="basePrice" class="form-control" id="time" placeholder="Enter Base Price (in $)" required>
+            <ul class="ist-unstyled" *ngIf="basePriceText?.invalid && (basePriceText?.touched || basePriceText?.dirty)">
+                <li class="text-danger" *ngIf="basePriceText.errors?.required"> 
+                    Base price is required !!
+                </li>
+              </ul>
         </div>
         <div class="form-group col-md-6">
             <label for="time">Valid Till</label>
-            <input type="number" [(ngModel)]="time" name="time" class="form-control" id="time" placeholder="Enter time in hours">
+            <input type="number" #timeText="ngModel" [(ngModel)]="time" name="time" class="form-control" id="time" placeholder="Enter time in hours">
+            <ul class="list-unstyled" *ngIf="timeText?.invalid && (timeText?.touched || timeText?.dirty)" required>
+                <li class="text-danger" *ngIf="timeText.errors?.required"> 
+                    Time in hours is required !!
+                </li>
+              </ul>
         </div>
     </div>
+    <button class="btn btn-primary" href="/products/upload">Upload Image</button>
     <input type="submit" class="btn btn-primary" value="Submit" (click)="onAddProductSubmit()">
   </form>
-  </div>
   <!-- <form>
       <div class="form-group">
         <label for="exampleFormControlInput1">Add Product</label>

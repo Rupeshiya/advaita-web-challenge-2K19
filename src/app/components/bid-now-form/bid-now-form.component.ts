@@ -40,10 +40,10 @@ bidProductId: any;
    
     this.productService.onBidNowFormSubmit(bidderInfo,this.bidProductId).subscribe((res)=>{
       if(res.success){
-        console.log('bidder info saved !!');
+        this.router.navigate(['/allProducts']);
         this.flashMessage.show('Successfully bidded !!',{cssClass: 'alert-success', timeout:2000});
       } else {
-        this.flashMessage.show('Something went wrong !!',{cssClass: 'alert-danger', timeout:2000});
+        this.flashMessage.show(res.msg,{cssClass: 'alert-danger', timeout:2000});
       }
     });
   }

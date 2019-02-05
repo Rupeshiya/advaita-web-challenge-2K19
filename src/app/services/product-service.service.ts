@@ -37,12 +37,32 @@ export class ProductServiceService {
     return this.http.get<ResponseFromApi>(url,{headers: headers});
   }
 
+  // delete product
+  deleteProductById(id){
+    const url = `/products/${id}`;
+    const headers = new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    return this.http.delete<ResponseFromApi>(url,{headers: headers});
+  }
+
   // bid now 
   onBidNowFormSubmit(bidderInfo,id){
     const url = `/products/bidnow/${id}`;
     const headers = new HttpHeaders();
     headers.append('Content-Type','application/json');
     return this.http.post<ResponseFromApi>(url,bidderInfo,{headers: headers});
+  }
+  checkValidity(id){
+    const url = `/products/validity/${id}`;
+    const headers = new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    return this.http.get<ResponseFromApi>(url,{headers: headers});
+  }
+  checkBidResult(id){
+    const url = `/products/bidresult/${id}`;
+    const headers = new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    return this.http.get<ResponseFromApi>(url,{headers: headers});
   }
   
 

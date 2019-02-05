@@ -17,6 +17,16 @@ const productSchema = new Schema({
   validTill:{
     type: Date,
     default: Date.now()
+  },
+  bidderEmail:{
+    type: String
+  },
+  bidderName:{
+    type: String
+  },
+  bidPrice:{
+    type:  Number,
+    default: 0
   }
 });
 
