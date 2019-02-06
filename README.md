@@ -47,6 +47,33 @@ Here `npm run build` will execute the script `ng build --prod && node ./app.js` 
  5. Dependencies - `package.json`
  6. Main driving backend code - `app.js`
 
+## Running status
+1. Welcome page -
+ [screenshot from 2019-02-06 17-44-48](https://user-images.githubusercontent.com/31209617/52341006-69511480-2a37-11e9-80ad-8089d093517a.png)
+
+2. Register page -
+
+![screenshot from 2019-02-06 17-45-10](https://user-images.githubusercontent.com/31209617/52341056-9271a500-2a37-11e9-9831-9484801e50fd.png)
+
+3. Login page -
+![screenshot from 2019-02-06 17-45-20](https://user-images.githubusercontent.com/31209617/52341108-b8974500-2a37-11e9-8236-143cea71331b.png)
+
+4. All products
+![screenshot from 2019-02-06 17-45-27](https://user-images.githubusercontent.com/31209617/52341130-cb117e80-2a37-11e9-897b-33422212d124.png)
+
+5. Bid now
+![screenshot from 2019-02-06 17-46-19](https://user-images.githubusercontent.com/31209617/52341154-df557b80-2a37-11e9-8e35-0dc740f86ccb.png)
+
+6. Bid status
+![screenshot from 2019-02-06 17-45-50](https://user-images.githubusercontent.com/31209617/52341178-f1371e80-2a37-11e9-91b7-afb6eac89b9b.png)
+
+7. Add product
+![screenshot from 2019-02-06 17-47-09](https://user-images.githubusercontent.com/31209617/52341198-feeca400-2a37-11e9-93a4-603e0324e56b.png)
+
+8. User's profile 
+
+![screenshot from 2019-02-06 17-47-24](https://user-images.githubusercontent.com/31209617/52341244-1330a100-2a38-11e9-8bb7-b3ae690903c5.png)
+
 ## Features implemented -
 
  1.  Register
