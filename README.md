@@ -49,7 +49,8 @@ Here `npm run build` will execute the script `ng build --prod && node ./app.js` 
 
 ## Running status
 1. Welcome page -
- [screenshot from 2019-02-06 17-44-48](https://user-images.githubusercontent.com/31209617/52341006-69511480-2a37-11e9-80ad-8089d093517a.png)
+![screenshot from 2019-02-06 17-44-48](https://user-images.githubusercontent.com/31209617/52341437-90f4ac80-2a38-11e9-82b2-0cbf14846a7e.png)
+
 
 2. Register page -
 
