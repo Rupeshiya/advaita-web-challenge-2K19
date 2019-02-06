@@ -12,18 +12,25 @@ Here `npm run build` will execute the script `ng build --prod && node ./app.js` 
 ## How to use -
 
  1. Clone the repo `https://github.com/Rupeshiya/advaita-web-challenge.git` .
- 2. If you have `angular cli` installed then after navigating to the project folder do `npm install` else install `angular cli` first using `npm install @angular/cli` then `npm install` (for more details follow the above given link). 
+ 2. If you have `angular cli` installed then after navigating to the project folder do `npm install` else install `angular cli` first using `npm install -g @angular/cli` then `npm install` (for more details follow the above given link). 
  3. Create a database on mlab and an account on sendGrid.
  4. Then in root directory of folder add a `.env` file and add the following -
   - mongoUri = "Your_mongoURI"
   - secret = 'helloworld'
   - sendgridUsername = 'Your_sendGrid_Username'
-  - sendgridPassword = 'YOur_sendGrid_password'
+  - sendgridPassword = 'Your_sendGrid_password'
   - emailFrom = 'Your_email_for_sending_mail'
   - mailService = 'SendGrid'
  5. Now after adding all the above requirements , after navigating to the same project folder run the command `npm run build`.
  6. Open the browser and navigate to `http://localhost:4000/` to see the features.
 
+## Things to keep in mind before using
+
+ 1. Should satisfy all the criteria as given in `How To Use` section.
+ 2. On doing `Bid Now` ,it will only accept the bid more than the latest bid (given jsut below the product ) as happens in the auctions.
+ 3. On doing `Bid Status` click - will render the bidding status just below the navbar .
+ 4. Any user can use all these functionalities only if loggedIn.
+ 
 ## Code distribution 
 
  1. Bcakend files

@@ -13,8 +13,8 @@
         <button class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidNowClick(product._id)">Bid Now</button>
         <button class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidResultClick(product._id)">Bid Status</button>
       </div> 
-      <div class="card-footer" *ngIf="authService.loggedIn()" *ngFor="let productId of productIdToDelete">
-          <button *ngIf="rightTODelete && product._id == productId" class="btn btn-danger" (click)="onDeleteProductClick(product._id)">Delete</button>
+      <div class="card-footer" *ngFor="let productId of productIdToDelete">
+          <button *ngIf="rightTODelete && product._id == productId && authService.loggedIn()" class="btn btn-danger" (click)="onDeleteProductClick(product._id)">Delete</button>
       </div>
     </div>    
 </div>
