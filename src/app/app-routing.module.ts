@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'allProducts', component: AllProductsComponent },
   { path: 'bidnow/:id', component: BidNowFormComponent ,canActivate: [AuthGuard]},
   { path: 'addProduct', component: AddProductComponent ,canActivate: [AuthGuard]},
-  { path: '', component: HomeComponent }
+  { path: '**', component: HomeComponent }
   
 ];
 

@@ -1,3 +1,12 @@
 ul > li > a:hover{
   color: #ffffff;
 } 
+/* #timer{
+	margin-left: 100%;
+} */
+
+#navbar-brand{
+	color: white;
+	font: bold;
+	font-weight: 900;
+}
