@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
 <div class="container">
-    <a class="navbar-brand" href="#">Auction</a>
+    <a class="navbar-brand" id="navbar-brand" href="#">Auction</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,8 +30,8 @@
               <a class="dropdown-item" id="navLink" *ngIf="authService.loggedIn()" [routerLink]="['addProduct']" style="color: rgb(20, 20, 20)">Add Product</a>
             </div>
           </li>
-          <li class="nav-item"> 
-              <countdown-timer style="font-size:30px;color:white;padding:30px;font-family:Roboto;" [end]="'2019-02-07 00:00:00'"></countdown-timer>
+          <li class="nav-item" id="timer"> 
+              <countdown-timer style="font-size:30px;color:rgb(240, 46, 46);padding:30px;font-family:Roboto;" [end]="'2019-02-07 00:00:00'"></countdown-timer>
           </li>
       </ul>
     </div>

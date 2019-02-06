@@ -30,7 +30,7 @@ productIdToDelete: any = [];
   ngOnInit() {
     
     this.getAllProducts();
-    this.flashMessage.show('Note:- Bid less than latest bid is not acceptable .',{cssClass: 'alert-danger', timout: 3000});
+    this.flashMessage.show('Note:- Bid less than latest bid is not acceptable .',{cssClass: 'alert-danger', timout: 5000});
     this.getProductOwner();
   }
 
