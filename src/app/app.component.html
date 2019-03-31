@@ -3,5 +3,6 @@
 <div class="container" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
   <flash-messages></flash-messages>
   <router-outlet #outlet="outlet"></router-outlet>
+  <!-- <app-dialog></app-dialog> -->
 </div>
 <app-footer></app-footer>

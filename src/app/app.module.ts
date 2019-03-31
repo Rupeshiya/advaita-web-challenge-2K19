@@ -25,6 +25,7 @@ import { CountdownTimerModule } from "ngx-countdown-timer";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material.module";
 import { MatSnackBarModule } from "@angular/material";
+import { DialogComponent } from "./components/dialog/dialog.component";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatSnackBarModule } from "@angular/material";
     AddProductComponent,
     AllProductsComponent,
     BidNowFormComponent,
-    FooterComponent
+    FooterComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import { MatSnackBarModule } from "@angular/material";
     MatSnackBarModule,
     FlashMessagesModule.forRoot()
   ],
+  entryComponents: [DialogComponent],
   providers: [AuthGuard, AuthService, ValidateService, HttpClientModule],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,13 @@ import { ProductServiceService } from "src/app/services/product-service.service"
 import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth-service.service";
 import { FlashMessagesService } from "angular2-flash-messages";
+import {
+  MatCardModule,
+  MatButtonModule,
+  MatDialogModule,
+  MatDialog
+} from "@angular/material";
+import { DialogComponent } from "../dialog/dialog.component";
 
 @Component({
   selector: "app-all-products",
@@ -23,7 +30,8 @@ export class AllProductsComponent implements OnInit {
     private productService: ProductServiceService,
     private router: Router,
     public authService: AuthService,
-    private flashMessage: FlashMessagesService
+    private flashMessage: FlashMessagesService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -98,16 +106,27 @@ export class AllProductsComponent implements OnInit {
       if (res.success) {
         console.log("response-", res);
         this.bidWinner = res.bidWinPerson;
-        this.flashMessage.show(
-          `Congratulations !! ,Till now product goes to ${this.bidWinner}`,
-          { cssClass: "alert-success", timeout: 8000 }
-        );
+        // this.flashMessage.show(
+        //   `Congratulations !! ,Till now product goes to ${this.bidWinner}`,
+        //   { cssClass: "alert-success", timeout: 8000 }
+        // );
+        this.openDialog(this.bidWinner);
       } else {
         this.flashMessage.show("OOps!! , Something went wrong !!", {
           cssClass: "alert-danger",
           timeout: 2000
         });
       }
+    });
+  }
+  openDialog(winner) {
+    let dialogRef = this.dialog.open(DialogComponent, {
+      width: "500px",
+      data: winner
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog closed: ${result}`);
+      // this.dialogResult = result;
     });
   }
 

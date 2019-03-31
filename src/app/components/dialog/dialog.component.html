@@ -1,0 +1,19 @@
+<div>
+  <h2 mat-dialog-title>BID STATUS</h2>
+  <hr>
+  <mat-dialog-content *ngIf="data; else nodata">
+    <strong>Goes to: {{data}}</strong>
+  </mat-dialog-content>
+  <hr>
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="onCloseClick()">CLOSE</button>
+  </mat-dialog-actions>
+  <ng-template #nodata>
+    <h2 mat-dialog-title>BID STATUS</h2>
+    <hr>
+    <mat-dialog-content>
+      <strong>No bidder yet !</strong>
+    </mat-dialog-content>
+    <hr>
+  </ng-template>
+</div>

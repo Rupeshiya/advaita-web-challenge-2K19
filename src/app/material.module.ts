@@ -1,22 +1,28 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 // here we will import all our angular-material dependencies
 import {
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    MatInputModule
- } from '@angular/material';
+  MatSnackBarModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatDialogModule
+} from "@angular/material";
 
 @NgModule({
-  imports:[
+  imports: [
     MatSnackBarModule,
     MatFormFieldModule,
     MatSelectModule,
     MatCheckboxModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   exports: [
     MatSnackBarModule,
@@ -24,7 +30,10 @@ import {
     MatSelectModule,
     MatCheckboxModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {}
