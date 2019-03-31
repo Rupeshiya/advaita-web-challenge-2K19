@@ -1,30 +1,37 @@
-body ,html {
+body,
+html {
   height: 100%;
   margin: 0%;
 }
-.image{
-  background-image:linear-gradient(to bottom, rgba(7, 7, 7, 0.07) , rgba(27, 26, 26, 0.1)) , url('../../../../public/images/wallbaper5.jpg'); 
+
+.image {
+  background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.07), rgba(27, 26, 26, 0.1)), url('../../../../public/images/wallbaper5.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   /* Set rules to fill background */
   min-height: 100%;
   min-width: 1024px;
-	
+
   /* Set up proportionate scaling */
   width: 100%;
   /* Set up positioning */
   position: absolute;
   /* top: 0; */
   left: 0;
-} 
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
+}
+
+@media screen and (max-width: 1024px) {
+
+  /* Specific to this particular image */
   .image {
     left: 50%;
-    margin-left: -512px;   /* 50% */
+    margin-left: -512px;
+    /* 50% */
   }
 }
-#welcome{
+
+#welcome {
   margin-top: 10%;
   margin-left: 25%;
   color: #ecf0eb;
@@ -33,17 +40,30 @@ body ,html {
 }
 
 
-@-webkit-keyframes typing { from { width: 0; } }
-@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
 
-h1 { 
+@-webkit-keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+h1 {
   font: bold 300% Consolas, Monaco, monospace;
   border-right: .1em solid black;
-  width: 16.5em; 
+  width: 16.5em;
   width: 21ch;
   margin: 2em 1em;
   white-space: nowrap;
   overflow: hidden;
   -webkit-animation: typing 5s steps(30, end),
-             blink-caret .5s step-end infinite alternate;
+    blink-caret .5s step-end infinite alternate;
+}
+
+.snackClass {
+  background-color: #0b798d;
 }

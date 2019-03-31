@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-navbar></app-navbar>
-<div class="container">
+<div class="container" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
   <flash-messages></flash-messages>
-    <router-outlet></router-outlet>
+  <router-outlet #outlet="outlet"></router-outlet>
 </div>
 <app-footer></app-footer>
