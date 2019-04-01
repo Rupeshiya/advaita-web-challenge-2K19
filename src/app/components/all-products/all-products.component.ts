@@ -7,9 +7,12 @@ import {
   MatCardModule,
   MatButtonModule,
   MatDialogModule,
-  MatDialog
+  MatDialog,
+  MatSnackBar,
+  MatSnackBarConfig
 } from "@angular/material";
 import { DialogComponent } from "../dialog/dialog.component";
+import { ProductDetailsComponent } from 'src/app/product-details/product-details.component';
 
 @Component({
   selector: "app-all-products",
@@ -25,22 +28,37 @@ export class AllProductsComponent implements OnInit {
   userEmail: any;
   rightTODelete: any;
   productIdToDelete: any = [];
+  product: any
 
   constructor(
     private productService: ProductServiceService,
     private router: Router,
     public authService: AuthService,
     private flashMessage: FlashMessagesService,
-    private dialog: MatDialog
-  ) {}
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit() {
     this.getAllProducts();
-    this.flashMessage.show(
-      "Note:- Bid less than latest bid is not acceptable .",
-      { cssClass: "alert-danger", timout: 5000 }
-    );
+    // this.flashMessage.show(
+    //   "Note:- Bid less than latest bid is not acceptable .",
+    //   { cssClass: "alert-danger", timout: 5000 }
+    // );
+    this.bidCondition();
     this.getProductOwner();
+  }
+  // snackbar notice for bid condition
+  bidCondition() {
+    const config = new MatSnackBarConfig();
+    config.horizontalPosition = "center";
+    config.verticalPosition = "top";
+    config.duration = 5000;
+    this.snackBar.open(
+      "Note:- Bid less than latest bid is not acceptable .",
+      "OK",
+      config
+    );
   }
 
   // load all the products
@@ -156,4 +174,30 @@ export class AllProductsComponent implements OnInit {
       }
     });
   }
+  getProductDetails(id) {
+    // this.router.navigate([`/products/${id}`]);
+    console.log(`Dialog open`);
+    this.productService.getProductById(id).subscribe((res) => {
+      if (res.success) {
+        this.product = res.product;
+        console.log('product by id ', res);
+        this.openDialogDetails(this.product);
+      } else {
+        console.log('error in open dialog details');
+      }
+    });
+  }
+  openDialogDetails(product) {
+    let dialogRef = this.dialog.open(ProductDetailsComponent, {
+      width: "500px",
+      data: product
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog closed: ${result}`);
+      // this.dialogResult = result;
+    });
+  }
+  // getProductById(id) {
+
+  // }
 }

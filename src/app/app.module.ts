@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material.module";
 import { MatSnackBarModule } from "@angular/material";
 import { DialogComponent } from "./components/dialog/dialog.component";
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { DialogComponent } from "./components/dialog/dialog.component";
     AllProductsComponent,
     BidNowFormComponent,
     FooterComponent,
-    DialogComponent
+    DialogComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

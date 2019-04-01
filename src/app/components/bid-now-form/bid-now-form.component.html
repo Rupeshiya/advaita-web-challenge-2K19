@@ -1,31 +1,35 @@
-<h2 class="page-header" >Bid Now</h2>
-<form >
-    <div class="form-group">
-        <label for="Name">Name</label>
-        <input type="text" class="form-control" placeholder="Enter your name" #nameText="ngModel"  [(ngModel)]="bidderName" name="bidderName" required>
-        <ul class="text-danger list-unstyled" *ngIf="nameText?.invalid && (nameText?.touched || nameText?.dirty) ">
-            <li *ngIf="nameText.errors?.required"> 
-                Name is required !!
-            </li>
-          </ul>
-      </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" placeholder="Enter your email" #emailText="ngModel" [(ngModel)]="email" name="email" required>
-      <ul class="text-danger list-unstyled" *ngIf="emailText?.invalid && (emailText?.touched || emailText?.dirty) ">
-          <li *ngIf="emailText.errors?.required"> 
-              Email is required !!
-          </li>
-        </ul>
-    </div>
-    <div class="form-group">
-      <label for="bidPrice">Bid Price</label>
-      <input type="number" class="form-control" placeholder=" Enter Price" #bidPriceText="ngModel" [(ngModel)]="bidPrice" name="bidPrice" placeholder="In $" required>
-      <ul class="text-danger list-unstyled" *ngIf="bidPriceText?.invalid && (bidPriceText?.touched || bidPriceText?.dirty) ">
-          <li *ngIf="bidPriceText.errors?.required"> 
-              Bidprice is required !!
-          </li>
-        </ul>
-    </div>
-    <input class="btn btn-lg btn-primary" type="submit" value="Done" (click)="onDoneClick()">
+<h2 class="page-header">Bid Now</h2>
+<form>
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" placeholder="Enter your name" #nameText="ngModel" [(ngModel)]="bidderName"
+      name="bidderName" required>
+    <ul class="text-danger list-unstyled" *ngIf="nameText?.invalid && (nameText?.touched || nameText?.dirty) ">
+      <li *ngIf="nameText.errors?.required">
+        Name is required !!
+      </li>
+    </ul>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" placeholder="Enter your email" #emailText="ngModel" [(ngModel)]="email"
+      name="email" required>
+    <ul class="text-danger list-unstyled" *ngIf="emailText?.invalid && (emailText?.touched || emailText?.dirty) ">
+      <li *ngIf="emailText.errors?.required">
+        Email is required !!
+      </li>
+    </ul>
+  </div>
+  <div class="form-group">
+    <label for="bidPrice">Bid Price</label>
+    <input type="number" class="form-control" placeholder=" Enter Price" #bidPriceText="ngModel" [(ngModel)]="bidPrice"
+      name="bidPrice" placeholder="In $" required>
+    <ul class="text-danger list-unstyled"
+      *ngIf="bidPriceText?.invalid && (bidPriceText?.touched || bidPriceText?.dirty) ">
+      <li *ngIf="bidPriceText.errors?.required">
+        Bidprice is required !!
+      </li>
+    </ul>
+  </div>
+  <input class="btn btn-lg btn-primary" type="submit" value="Done" (click)="onDoneClick()">
 </form>

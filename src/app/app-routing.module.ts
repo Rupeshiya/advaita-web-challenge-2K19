@@ -8,12 +8,14 @@ import { AuthGuard } from "./guards/auth.guard";
 import { AllProductsComponent } from "./components/all-products/all-products.component";
 import { BidNowFormComponent } from "./components/bid-now-form/bid-now-form.component";
 import { AddProductComponent } from "./components/add-product/add-product.component";
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "allProducts", component: AllProductsComponent },
+  { path: "product/:id", component: ProductDetailsComponent },
   {
     path: "bidnow/:id",
     component: BidNowFormComponent,
@@ -33,4 +35,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

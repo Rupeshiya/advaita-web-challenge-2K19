@@ -10,10 +10,14 @@
       Latest Bid ${{product.bidPrice}}
     </div>
     <div class="card-footer">
-      <button class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidNowClick(product._id)">Bid
+      <button mat-raised-button class="pull-left" *ngIf="authService.loggedIn()"
+        (click)="onBidNowClick(product._id)">Bid
         Now</button>
-      <button class="btn btn-primary" *ngIf="authService.loggedIn()" (click)="onBidResultClick(product._id)">Bid
+      <button mat-raised-button class="pull-left" *ngIf="authService.loggedIn()"
+        (click)="onBidResultClick(product._id)">Bid
         Status</button>
+      <button mat-raised-button class="pull-right" (click)="getProductDetails(product._id)">Product
+        Details</button>
     </div>
     <div class="card-footer" *ngFor="let productId of productIdToDelete">
       <button *ngIf="rightTODelete && product._id == productId" class="btn btn-danger"

@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(
     public connectionService: ConnectionService,
     public snackBar: MatSnackBar
-  ) {}
+  ) { }
 
   ngOnInit() {
     const config = new MatSnackBarConfig();
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
       this.isConnected = isConnected;
       if (this.isConnected) {
         console.log("online !!");
-        this.snackBar.open("Online", "OK", config);
+        // this.snackBar.open("Online", "OK", config);
       } else {
         console.log("Offline !!");
         this.snackBar.open("Offline", "OK", config);
