@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { ProductServiceService } from "src/app/services/product-service.service";
 import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth-service.service";
@@ -36,7 +36,8 @@ export class AllProductsComponent implements OnInit {
     public authService: AuthService,
     private flashMessage: FlashMessagesService,
     private dialog: MatDialog,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private cd: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
@@ -47,6 +48,9 @@ export class AllProductsComponent implements OnInit {
     // );
     this.bidCondition();
     this.getProductOwner();
+  }
+  ngAfterViewInit() {
+    this.cd.detectChanges();
   }
   // snackbar notice for bid condition
   bidCondition() {
