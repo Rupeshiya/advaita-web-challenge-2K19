@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build && node ./app.js",
+    "start": "node ./app.js",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "eslint": "eslint ./models/**/**.js ./server/**/**.js ./config/**/**.js ./app.js --fix"
+    "eslint": "eslint ./models/**/**.js ./server/**/**.js ./config/**/**.js ./app.js --fix",
+    "dev": "ng build --prod && nodemon ./app.js"
   },
   "private": true,
   "dependencies": {
