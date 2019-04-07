@@ -61,7 +61,7 @@ router.post('/authenticate',(req,res)=>{
             }
             if(isMatch){
                 // making token
-                const token = jwt.sign({data: user}, process.env.secret, {
+                const token = jwt.sign({data: user}, `${process.env.secret}`, {
                     expiresIn: 604800 // 1 week
                 });
                 // sending response to the front-end

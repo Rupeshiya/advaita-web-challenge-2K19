@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 // session
 app.use(cookieParser());
 app.use(session({
-  secret: process.env.secret,
+  secret: `${process.env.secret}`,
   resave: true,
   saveUninitialized: false,
   cookie: {
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, '/dist/web-challenge')));
 app.use(history());
 
 // connecting mongo
-mongoose.connect(process.env.mongoUri, {
+mongoose.connect(`${process.env.mongoUri}`, {
     useNewUrlParser: true
   })
   .then(() => {
