@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && nodemon ./app.js",
+    "build": "ng build && node ./app.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -77,7 +77,6 @@
   },
   "engines": {
     "node": "11.11.0",
-    "npm": "6.7.0",
-    "nodemon": "1.18.10"
+    "npm": "6.7.0"
   }
 }
