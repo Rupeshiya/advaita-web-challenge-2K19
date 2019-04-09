@@ -26,6 +26,7 @@
     "@angular/router": "~7.1.0",
     "angular2-flash-messages": "^3.0.1",
     "angular2-jwt": "^0.2.3",
+    "async": "^2.6.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",

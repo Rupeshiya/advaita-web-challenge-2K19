@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -9,7 +10,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const history = require('connect-history-api-fallback');
-require('dotenv').config();
+
 // use cors for cross-origin accessibility
 app.use(cors());
 
@@ -45,6 +46,7 @@ app.use(express.static(path.join(__dirname, '/dist/web-challenge')));
 app.use(history());
 
 // connecting mongo
+mongoose.Promise = global.Promise;
 mongoose.connect(process.env.mongoUri, {
     useNewUrlParser: true
   })
