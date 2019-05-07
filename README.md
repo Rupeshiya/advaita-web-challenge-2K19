@@ -66,7 +66,7 @@ Here `npm run build` will execute the script `ng build --prod && node ./app.js` 
 ![screenshot from 2019-02-06 17-46-19](https://user-images.githubusercontent.com/31209617/52341154-df557b80-2a37-11e9-8e35-0dc740f86ccb.png)
 
 6. Bid status
-![screenshot from 2019-02-06 17-45-50](https://user-images.githubusercontent.com/31209617/52341178-f1371e80-2a37-11e9-91b7-afb6eac89b9b.png)
+![status](https://user-images.githubusercontent.com/31209617/56434076-c0554e80-62f0-11e9-841a-24e7a7a35053.png)
 
 7. Add product
 ![screenshot from 2019-02-06 17-47-09](https://user-images.githubusercontent.com/31209617/52341198-feeca400-2a37-11e9-93a4-603e0324e56b.png)
@@ -74,6 +74,9 @@ Here `npm run build` will execute the script `ng build --prod && node ./app.js` 
 8. User's profile 
 
 ![screenshot from 2019-02-06 17-47-24](https://user-images.githubusercontent.com/31209617/52341244-1330a100-2a38-11e9-8bb7-b3ae690903c5.png)
+
+9. Product details
+![productDetails](https://user-images.githubusercontent.com/31209617/56434018-969c2780-62f0-11e9-87d5-ac11befc3ad4.png)
 
 ## Features implemented -
 
