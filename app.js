@@ -78,7 +78,10 @@ app.get('**', (req, res) => {
   res.sendFile(path.join(__dirname, './dist/web-challenge/index.html'));
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
+
+module.exports = server;
+
 // https: //auctioner.herokuapp.com/allProducts

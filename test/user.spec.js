@@ -3,6 +3,9 @@ const expect = chai.expect;
 const users = require('../models/user');
 const mongoose = require('mongoose');
 const server = require('../app');
+const chaiHttp = require('chai-http');
+chai.use(chaiHttp);
+const should = chai.should();
 
 // clean db
 describe('Clean db',()=>{
